@@ -52,18 +52,6 @@ class window.AppView extends Backbone.View
           scores = @model.get('dealerHand').scores()
           minDealer = Math.min scores[0], scores[1]
           # @render()
-
-        #n= number of cards
-        # n = @model.get('dealerHand').length;
-        # #for loop through n
-        # array = [2...n]
-        # for index in array
-        #   setTimeout =>
-        #     # @render
-        #     @model.get('dealerHand').at(index).renderNext()
-        #   , 1000
-        #render one by one with setTimeout
-
         # if dealer < 21 && dealer > player, dealer wins
         scores = @model.get('playerHand').scores()
         minPlayer = Math.min scores[0], scores[1] 
@@ -79,7 +67,7 @@ class window.AppView extends Backbone.View
             alert ('Miracles exist!')
           @model.reset()
           console.log @model.get('playerHand')
-          console.log @model.get('dealerHand')
+          console.log @model.get('deal')
           @dealer()
           @end()
           @render()
