@@ -31,6 +31,7 @@ class window.AppView extends Backbone.View
         # @model = new App()
         @model.reset()
         @end()
+        @dealer()
         @render()
         #reassign the playerHand
 
@@ -54,9 +55,13 @@ class window.AppView extends Backbone.View
         if minDealer < 21 and minDealer > minPlayer
           alert ('Dealer wins!')
         #else player wins
-        if minDealer == minPlayer
+        else if minDealer == minPlayer
           alert ('Game push')
         else 
           alert ('Miracles exist!')
+        @model.reset()
+        @dealer()
+        @end()
+        @render()
 
 #    @collection.on 'add remove change', => @render()
