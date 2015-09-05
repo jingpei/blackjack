@@ -14,7 +14,8 @@ class window.App extends Backbone.Model
 # @get('playerHand').add(deck.pop()÷)
 
   reset: ->
-    @set 'deck', deck = new Deck()
+    # @set 'deck', deck = new Deck()
+    
     @set 'playerHand', deck.dealPlayer()
     @set 'dealerHand', deck.dealDealer() 
     # @get 'playerHand' 

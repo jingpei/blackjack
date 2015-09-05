@@ -14,3 +14,12 @@
 .hand {
   overflow: auto;
 }
+
+img {
+  width: 100%;
+}
+
+.covered img {
+  /*background-image: url('../img/card-back.png');*/
+  display: none;
+}
