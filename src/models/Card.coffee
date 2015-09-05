@@ -1,3 +1,4 @@
+
 class window.Card extends Backbone.Model
   initialize: (params) ->
     @set

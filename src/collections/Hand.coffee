@@ -7,6 +7,8 @@ class window.Hand extends Backbone.Collection
     @add(@deck.pop())
     @last()
 
+  stand: ->
+    @trigger 'dealerTurn', @
 
   hasAce: -> @reduce (memo, card) ->
     memo or card.get('value') is 1
@@ -22,4 +24,11 @@ class window.Hand extends Backbone.Collection
     # when there is an ace, it offers you two scores - the original score, and score + 10.
     [@minScore(), @minScore() + 10 * @hasAce()]
 
+
+  last: ->
+    #needs to check if score is over 21
+    scores = @scores()
+    min = Math.min scores[0], scores[1]
+    if min > 21 
+      @trigger 'endGame', @
 
