@@ -8,9 +8,12 @@ class window.HandView extends Backbone.View
     @render()
 
   render: ->
-    @$el.children().detach()
-    @$el.html @template @collection
-    @$el.append @collection.map (card) ->
-      new CardView(model: card).$el
-    @$('.score').text @collection.scores()[0]
+    setTimeout =>
+      @$el.children().detach()
+      @$el.html @template @collection
+      @$el.append @collection.map (card) ->
+        new CardView(model: card).$el
+      @$('.score').text @collection.scores()[0]
+      console.log('delay')
+    ,500
 
